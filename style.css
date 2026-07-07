@@ -646,6 +646,59 @@ textarea {
   max-width: 720px;
 }
 
+.weekly-newsletter,
+.newsletter-panel {
+  max-width: 760px;
+  display: grid;
+  gap: 16px;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(247, 222, 148, 0.25), transparent 8px),
+    var(--white);
+}
+
+.weekly-newsletter {
+  margin-top: 34px;
+}
+
+.weekly-newsletter span {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.weekly-newsletter p,
+.newsletter-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.weekly-newsletter a {
+  width: fit-content;
+  background: var(--blue);
+  color: var(--white);
+  padding: 15px 22px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.weekly-newsletter a:hover {
+  background: var(--ink);
+  color: var(--gold);
+}
+
+.newsletter-panel iframe {
+  width: 100%;
+  max-width: 540px;
+  min-height: 305px;
+  border: 0;
+}
+
 .split-page {
   display: grid;
   grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1fr);
