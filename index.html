@@ -1566,14 +1566,24 @@
         </div>
         <div class="map-shell">
           <div class="map-board" aria-label="Mappa interattiva delle relazioni globali">
-            <svg class="world-map" viewBox="0 0 1000 520" aria-hidden="true">
-              <path d="M83 203 128 155l74-18 85 16 48 40-26 54 39 39-39 63-82 18-55-37-77 18-48-57 21-50Z"></path>
-              <path d="m146 369 73-19 88 23 39 59-45 54-88-13-58-58Z"></path>
-              <path d="m384 168 66-48 98 20 72 62-32 63 46 69-45 86-77 30-64-49-40-91-56-49Z"></path>
-              <path d="m469 334 66 24 36 72-35 72-60-19-34-76Z"></path>
-              <path d="m611 154 106-48 132 30 98 86-43 63 47 58-62 76-130 4-55-62-96-25-52-88Z"></path>
-              <path d="m779 382 80-22 80 38 32 61-54 39-96-23Z"></path>
-              <path d="m666 102 42-28 54 12 24 29-56 17Z"></path>
+            <svg class="world-map" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs>
+                <linearGradient id="atlasLand" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#f7de94"></stop>
+                  <stop offset="1" stop-color="#eef0ff"></stop>
+                </linearGradient>
+              </defs>
+              <path class="map-graticule" d="M90 120h820M90 260h820M90 400h820M220 70v390M390 70v390M560 70v390M730 70v390"></path>
+              <g class="continent-shapes">
+                <path d="M92 201 122 159l67-28 80 10 58 34 45 7 25 32-18 41 33 40-33 41-73 8-52 47-68-18-25-43-54-19-28-55Z"></path>
+                <path d="M244 334 302 351l44 56-18 67-55 28-58-32-23-64 20-48Z"></path>
+                <path d="M417 161 476 116l86 6 53 36-16 45 37 34-12 48-61 8-33-26-57 14-51-38-38-42Z"></path>
+                <path d="M500 285 565 314l34 63-15 78-45 36-50-34-28-77 18-60Z"></path>
+                <path d="M602 162 675 114l126-4 94 43 50 70-22 60 35 55-67 54-104-7-68-43-83-2-48-62 29-57-36-48Z"></path>
+                <path d="M755 378 822 356l92 25 53 54-18 40-69 18-84-24-52-47Z"></path>
+                <path d="M682 92 731 66l70 9 41 30-57 24-72-2Z"></path>
+                <path d="M864 235 903 222l34 21-18 26-42 2Z"></path>
+              </g>
             </svg>
             <button class="map-point" style="--x:22%;--y:42%" data-map-point="stati_uniti">Stati Uniti</button>
             <button class="map-point" style="--x:26%;--y:56%" data-map-point="messico">Messico</button>

@@ -884,7 +884,7 @@ textarea {
 
 .map-shell {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 380px);
   gap: 1px;
   border: 1px solid var(--line);
   background: var(--line);
@@ -892,30 +892,55 @@ textarea {
 
 .map-board {
   position: relative;
-  min-height: 510px;
+  min-height: 560px;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(247, 222, 148, 0.4) 1px, transparent 1px) 0 0 / 52px 52px,
-    linear-gradient(rgba(17, 16, 26, 0.05) 1px, transparent 1px) 0 0 / 52px 52px,
+    radial-gradient(circle at 18% 24%, rgba(247, 222, 148, 0.28), transparent 24%),
+    linear-gradient(180deg, rgba(74, 71, 255, 0.06), rgba(247, 222, 148, 0.1)),
     var(--white);
+}
+
+.map-board::before {
+  content: "CiviOn civic atlas";
+  position: absolute;
+  left: 24px;
+  top: 22px;
+  z-index: 2;
+  color: rgba(17, 16, 26, 0.48);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.map-board::after {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(17, 16, 26, 0.08);
+  pointer-events: none;
 }
 
 .world-map {
   position: absolute;
-  inset: 8% 5%;
-  width: 90%;
-  height: 84%;
+  inset: 44px 22px 34px;
+  width: calc(100% - 44px);
+  height: calc(100% - 78px);
 }
 
-.world-map path {
-  fill: #d6d4dc;
-  stroke: #aaa6b5;
-  stroke-width: 2;
+.continent-shapes path {
+  fill: url("#atlasLand");
+  stroke: rgba(17, 16, 26, 0.22);
+  stroke-width: 1.35;
   vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 18px 28px rgba(74, 71, 255, 0.08));
 }
 
-.world-map path:hover {
-  fill: var(--gold);
+.map-graticule {
+  fill: none;
+  stroke: rgba(74, 71, 255, 0.1);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
 }
 
 .map-point {
@@ -924,28 +949,45 @@ textarea {
   top: var(--y);
   transform: translate(-50%, -50%);
   min-width: 0;
-  min-height: 24px;
-  padding: 5px 8px;
-  border: 1px solid rgba(17, 16, 26, 0.16);
-  border-radius: 999px;
-  background: var(--blue);
-  color: var(--white);
+  min-height: 22px;
+  padding: 5px 7px 5px 18px;
+  border: 1px solid rgba(74, 71, 255, 0.18);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--ink);
   font-size: 10px;
   font-weight: 800;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
-  box-shadow: 0 13px 28px rgba(74, 71, 255, 0.22);
-  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 10px 22px rgba(17, 16, 26, 0.08);
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.map-point::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  transform: translateY(-50%);
 }
 
 .map-point:hover,
 .map-point.is-selected {
   transform: translate(-50%, -50%) scale(1.08);
-  background: var(--ink);
+  background: var(--gold);
   border-color: var(--gold);
-  box-shadow: 0 18px 40px rgba(17, 16, 26, 0.24);
+  box-shadow: 0 18px 40px rgba(17, 16, 26, 0.18);
   z-index: 5;
+}
+
+.map-point:hover::before,
+.map-point.is-selected::before {
+  background: var(--ink);
 }
 
 .map-panel {
