@@ -541,7 +541,7 @@ searchResults.addEventListener("click", (event) => {
   setRoute(link.dataset.searchRoute);
 });
 
-function renderMapCard(key) {
+function renderMapCard(key, shouldScroll = false) {
   const item = mapData[key];
   if (!item) return;
 
@@ -558,6 +558,10 @@ function renderMapCard(key) {
   document.querySelector("#map-issues").innerHTML = item.issues.map((issue) => `<li>${issue}</li>`).join("");
   document.querySelector("#map-youth").textContent = item.youth;
   document.querySelector("#map-why").textContent = item.why;
+
+  if (shouldScroll) {
+    document.querySelector(".map-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 const mapList = document.querySelector(".map-list");
@@ -569,7 +573,13 @@ if (mapList) {
 }
 
 document.querySelectorAll("[data-map-point]").forEach((button) => {
-  button.addEventListener("click", () => renderMapCard(button.dataset.mapPoint));
+  if (button.classList.contains("map-point")) {
+    const label = button.textContent.trim();
+    button.setAttribute("aria-label", label);
+    button.setAttribute("title", label);
+  }
+
+  button.addEventListener("click", () => renderMapCard(button.dataset.mapPoint, button.classList.contains("map-point")));
 });
 
 renderMapCard("italia");

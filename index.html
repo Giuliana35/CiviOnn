@@ -1566,61 +1566,43 @@
         </div>
         <div class="map-shell">
           <div class="map-board" aria-label="Mappa interattiva delle relazioni globali">
-            <svg class="world-map" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-              <defs>
-                <linearGradient id="atlasLand" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0" stop-color="#f7de94"></stop>
-                  <stop offset="1" stop-color="#eef0ff"></stop>
-                </linearGradient>
-              </defs>
-              <path class="map-graticule" d="M90 120h820M90 260h820M90 400h820M220 70v390M390 70v390M560 70v390M730 70v390"></path>
-              <g class="continent-shapes">
-                <path d="M92 201 122 159l67-28 80 10 58 34 45 7 25 32-18 41 33 40-33 41-73 8-52 47-68-18-25-43-54-19-28-55Z"></path>
-                <path d="M244 334 302 351l44 56-18 67-55 28-58-32-23-64 20-48Z"></path>
-                <path d="M417 161 476 116l86 6 53 36-16 45 37 34-12 48-61 8-33-26-57 14-51-38-38-42Z"></path>
-                <path d="M500 285 565 314l34 63-15 78-45 36-50-34-28-77 18-60Z"></path>
-                <path d="M602 162 675 114l126-4 94 43 50 70-22 60 35 55-67 54-104-7-68-43-83-2-48-62 29-57-36-48Z"></path>
-                <path d="M755 378 822 356l92 25 53 54-18 40-69 18-84-24-52-47Z"></path>
-                <path d="M682 92 731 66l70 9 41 30-57 24-72-2Z"></path>
-                <path d="M864 235 903 222l34 21-18 26-42 2Z"></path>
-              </g>
-            </svg>
-            <button class="map-point" style="--x:22%;--y:42%" data-map-point="stati_uniti">Stati Uniti</button>
-            <button class="map-point" style="--x:26%;--y:56%" data-map-point="messico">Messico</button>
-            <button class="map-point" style="--x:27%;--y:74%" data-map-point="brasile">Brasile</button>
-            <button class="map-point" style="--x:46%;--y:39%" data-map-point="francia">Francia</button>
-            <button class="map-point" style="--x:45%;--y:45%" data-map-point="spagna">Spagna</button>
-            <button class="map-point" style="--x:50%;--y:36%" data-map-point="germania">Germania</button>
-            <button class="map-point" style="--x:50%;--y:24%" data-map-point="norvegia">Norvegia</button>
-            <button class="map-point" style="--x:51%;--y:28%" data-map-point="svezia">Svezia</button>
-            <button class="map-point is-selected" style="--x:50%;--y:45%" data-map-point="italia">Italia</button>
-            <button class="map-point" style="--x:47%;--y:34%" data-map-point="regno_unito">Regno Unito</button>
-            <button class="map-point" style="--x:56%;--y:38%" data-map-point="ucraina">Ucraina</button>
-            <button class="map-point" style="--x:52%;--y:36%" data-map-point="polonia">Polonia</button>
-            <button class="map-point" style="--x:58%;--y:46%" data-map-point="turchia">Turchia</button>
-            <button class="map-point" style="--x:60%;--y:49%" data-map-point="siria">Siria</button>
-            <button class="map-point" style="--x:59%;--y:51%" data-map-point="libano">Libano</button>
-            <button class="map-point" style="--x:59%;--y:50%" data-map-point="palestina_israele">Palestina / Israele</button>
-            <button class="map-point" style="--x:55%;--y:55%" data-map-point="egitto">Egitto</button>
-            <button class="map-point" style="--x:63%;--y:48%" data-map-point="iran">Iran</button>
-            <button class="map-point" style="--x:63%;--y:56%" data-map-point="arabia_saudita">Arabia Saudita</button>
-            <button class="map-point" style="--x:67%;--y:48%" data-map-point="afghanistan">Afghanistan</button>
-            <button class="map-point" style="--x:19%;--y:27%" data-map-point="canada">Canada</button>
-            <button class="map-point" style="--x:50%;--y:61%" data-map-point="nigeria">Nigeria</button>
-            <button class="map-point" style="--x:52%;--y:70%" data-map-point="congo">R. D. Congo</button>
-            <button class="map-point" style="--x:51%;--y:83%" data-map-point="sudafrica">Sudafrica</button>
-            <button class="map-point" style="--x:56%;--y:69%" data-map-point="kenya">Kenya</button>
-            <button class="map-point" style="--x:29%;--y:62%" data-map-point="venezuela">Venezuela</button>
-            <button class="map-point" style="--x:28%;--y:69%" data-map-point="colombia">Colombia</button>
-            <button class="map-point" style="--x:31%;--y:85%" data-map-point="argentina">Argentina</button>
-            <button class="map-point" style="--x:71%;--y:53%" data-map-point="india">India</button>
-            <button class="map-point" style="--x:74%;--y:43%" data-map-point="cina">Cina</button>
-            <button class="map-point" style="--x:82%;--y:42%" data-map-point="corea_nord">Corea Nord</button>
-            <button class="map-point" style="--x:83%;--y:46%" data-map-point="corea_sud">Corea Sud</button>
-            <button class="map-point" style="--x:77%;--y:66%" data-map-point="indonesia">Indonesia</button>
-            <button class="map-point" style="--x:76%;--y:61%" data-map-point="singapore">Singapore</button>
-            <button class="map-point" style="--x:86%;--y:46%" data-map-point="giappone">Giappone</button>
-            <button class="map-point" style="--x:82%;--y:84%" data-map-point="australia">Australia</button>
+            <img class="world-map" src="map-civion.png" alt="" aria-hidden="true" />
+            <button class="map-point" style="--x:16.0%;--y:39.4%" data-map-point="stati_uniti">Stati Uniti</button>
+            <button class="map-point" style="--x:19.8%;--y:51.0%" data-map-point="messico">Messico</button>
+            <button class="map-point" style="--x:30.2%;--y:68.0%" data-map-point="brasile">Brasile</button>
+            <button class="map-point" style="--x:47.0%;--y:34.2%" data-map-point="francia">Francia</button>
+            <button class="map-point" style="--x:45.0%;--y:40.0%" data-map-point="spagna">Spagna</button>
+            <button class="map-point" style="--x:48.6%;--y:32.5%" data-map-point="germania">Germania</button>
+            <button class="map-point" style="--x:49.1%;--y:19.6%" data-map-point="norvegia">Norvegia</button>
+            <button class="map-point" style="--x:50.2%;--y:21.2%" data-map-point="svezia">Svezia</button>
+            <button class="map-point is-selected" style="--x:48.8%;--y:39.2%" data-map-point="italia">Italia</button>
+            <button class="map-point" style="--x:45.0%;--y:30.0%" data-map-point="regno_unito">Regno Unito</button>
+            <button class="map-point" style="--x:53.4%;--y:34.2%" data-map-point="ucraina">Ucraina</button>
+            <button class="map-point" style="--x:50.6%;--y:31.6%" data-map-point="polonia">Polonia</button>
+            <button class="map-point" style="--x:54.8%;--y:41.3%" data-map-point="turchia">Turchia</button>
+            <button class="map-point" style="--x:55.4%;--y:45.5%" data-map-point="siria">Siria</button>
+            <button class="map-point" style="--x:54.8%;--y:45.9%" data-map-point="libano">Libano</button>
+            <button class="map-point" style="--x:55.2%;--y:47.8%" data-map-point="palestina_israele">Palestina / Israele</button>
+            <button class="map-point" style="--x:53.4%;--y:51.8%" data-map-point="egitto">Egitto</button>
+            <button class="map-point" style="--x:58.6%;--y:46.6%" data-map-point="iran">Iran</button>
+            <button class="map-point" style="--x:57.6%;--y:51.4%" data-map-point="arabia_saudita">Arabia Saudita</button>
+            <button class="map-point" style="--x:62.8%;--y:45.6%" data-map-point="afghanistan">Afghanistan</button>
+            <button class="map-point" style="--x:16.8%;--y:22.6%" data-map-point="canada">Canada</button>
+            <button class="map-point" style="--x:48.5%;--y:60.5%" data-map-point="nigeria">Nigeria</button>
+            <button class="map-point" style="--x:52.0%;--y:71.0%" data-map-point="congo">R. D. Congo</button>
+            <button class="map-point" style="--x:53.7%;--y:84.8%" data-map-point="sudafrica">Sudafrica</button>
+            <button class="map-point" style="--x:55.9%;--y:67.9%" data-map-point="kenya">Kenya</button>
+            <button class="map-point" style="--x:28.2%;--y:61.0%" data-map-point="venezuela">Venezuela</button>
+            <button class="map-point" style="--x:27.0%;--y:64.0%" data-map-point="colombia">Colombia</button>
+            <button class="map-point" style="--x:30.4%;--y:85.6%" data-map-point="argentina">Argentina</button>
+            <button class="map-point" style="--x:64.8%;--y:52.1%" data-map-point="india">India</button>
+            <button class="map-point" style="--x:73.0%;--y:41.6%" data-map-point="cina">Cina</button>
+            <button class="map-point" style="--x:76.4%;--y:41.1%" data-map-point="corea_nord">Corea Nord</button>
+            <button class="map-point" style="--x:76.7%;--y:43.8%" data-map-point="corea_sud">Corea Sud</button>
+            <button class="map-point" style="--x:76.4%;--y:68.2%" data-map-point="indonesia">Indonesia</button>
+            <button class="map-point" style="--x:70.4%;--y:62.6%" data-map-point="singapore">Singapore</button>
+            <button class="map-point" style="--x:80.8%;--y:40.6%" data-map-point="giappone">Giappone</button>
+            <button class="map-point" style="--x:79.8%;--y:82.8%" data-map-point="australia">Australia</button>
           </div>
           <aside class="map-panel" aria-live="polite">
             <span id="map-kicker">Italia 🇮🇹</span>
