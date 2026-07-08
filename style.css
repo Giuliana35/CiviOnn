@@ -884,7 +884,7 @@ textarea {
 
 .map-shell {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 380px);
+  grid-template-columns: 1fr;
   gap: 1px;
   border: 1px solid var(--line);
   background: var(--line);
@@ -892,55 +892,30 @@ textarea {
 
 .map-board {
   position: relative;
-  min-height: 560px;
+  min-height: 0;
+  aspect-ratio: 1777 / 768;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 24%, rgba(247, 222, 148, 0.28), transparent 24%),
-    linear-gradient(180deg, rgba(74, 71, 255, 0.06), rgba(247, 222, 148, 0.1)),
-    var(--white);
+  background: var(--white);
 }
 
 .map-board::before {
-  content: "CiviOn civic atlas";
-  position: absolute;
-  left: 24px;
-  top: 22px;
-  z-index: 2;
-  color: rgba(17, 16, 26, 0.48);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  content: none;
 }
 
 .map-board::after {
   content: "";
   position: absolute;
-  inset: 24px;
+  inset: 16px;
   border: 1px solid rgba(17, 16, 26, 0.08);
   pointer-events: none;
 }
 
 .world-map {
   position: absolute;
-  inset: 44px 22px 34px;
-  width: calc(100% - 44px);
-  height: calc(100% - 78px);
-}
-
-.continent-shapes path {
-  fill: url("#atlasLand");
-  stroke: rgba(17, 16, 26, 0.22);
-  stroke-width: 1.35;
-  vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 18px 28px rgba(74, 71, 255, 0.08));
-}
-
-.map-graticule {
-  fill: none;
-  stroke: rgba(74, 71, 255, 0.1);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .map-point {
@@ -948,55 +923,71 @@ textarea {
   left: var(--x);
   top: var(--y);
   transform: translate(-50%, -50%);
-  min-width: 0;
-  min-height: 22px;
-  padding: 5px 7px 5px 18px;
-  border: 1px solid rgba(74, 71, 255, 0.18);
-  border-radius: 0;
-  background: rgba(255, 255, 255, 0.86);
-  color: var(--ink);
-  font-size: 10px;
-  font-weight: 800;
-  line-height: 1;
+  width: clamp(9px, 0.9vw, 14px);
+  height: clamp(9px, 0.9vw, 14px);
+  min-width: 9px;
+  min-height: 9px;
+  padding: 0;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  background: var(--blue);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -999px;
   white-space: nowrap;
   cursor: pointer;
-  box-shadow: 0 10px 22px rgba(17, 16, 26, 0.08);
+  box-shadow: 0 8px 18px rgba(17, 16, 26, 0.18);
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .map-point::before {
-  content: "";
+  content: none;
+}
+
+.map-point::after {
+  content: attr(aria-label);
   position: absolute;
-  left: 7px;
-  top: 50%;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--blue);
-  transform: translateY(-50%);
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 160px;
+  padding: 6px 8px;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  text-indent: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  z-index: 10;
 }
 
 .map-point:hover,
 .map-point.is-selected {
-  transform: translate(-50%, -50%) scale(1.08);
+  transform: translate(-50%, -50%) scale(1.45);
   background: var(--gold);
-  border-color: var(--gold);
+  border-color: var(--ink);
   box-shadow: 0 18px 40px rgba(17, 16, 26, 0.18);
   z-index: 5;
 }
 
-.map-point:hover::before,
-.map-point.is-selected::before {
-  background: var(--ink);
+.map-point:hover::after,
+.map-point:focus-visible::after {
+  opacity: 1;
 }
 
 .map-panel {
-  min-height: 510px;
-  padding: clamp(28px, 4vw, 46px);
+  min-height: 0;
+  padding: clamp(24px, 4vw, 38px);
   background: var(--white);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(280px, 1fr);
+  gap: 20px 34px;
+  align-items: start;
 }
 
 .map-panel span {
@@ -1008,20 +999,20 @@ textarea {
 
 .map-panel h2 {
   margin: 14px 0 12px;
-  font-size: clamp(26px, 3vw, 40px);
+  font-size: clamp(24px, 2.5vw, 34px);
   line-height: 1.04;
 }
 
 .map-panel p {
   color: var(--muted);
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
 .map-panel dl {
   display: grid;
   gap: 1px;
-  margin: 24px 0 0;
+  margin: 0;
   background: var(--line);
 }
 
@@ -1046,7 +1037,8 @@ textarea {
 }
 
 .map-detail {
-  margin-top: 26px;
+  grid-column: 1 / -1;
+  margin-top: 0;
 }
 
 .map-detail h3 {
@@ -1483,17 +1475,21 @@ textarea {
   }
 
   .map-board {
-    min-height: 430px;
+    min-height: 250px;
+    aspect-ratio: auto;
   }
 
   .map-panel {
     min-height: auto;
+    grid-template-columns: 1fr;
   }
 
   .map-point {
-    min-height: 22px;
-    padding: 4px 6px;
-    font-size: 9px;
+    width: 9px;
+    height: 9px;
+    min-height: 9px;
+    padding: 0;
+    font-size: 7px;
   }
 
   .map-detail ul {
