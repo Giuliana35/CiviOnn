@@ -16,6 +16,7 @@ const sectionNames = {
   "milizie-armate": "Articoli",
   "accordi-parigi": "Articoli",
   "canale-suez": "Articoli",
+  "rivoluzione-fenicotteri": "Articoli",
   weekly: "Weekly",
   culture: "Culture",
   "altra-parte-medaglia": "Culture",
