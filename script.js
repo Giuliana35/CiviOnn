@@ -8,6 +8,8 @@ const searchInput = document.querySelector("#site-search");
 const searchResults = document.querySelector("#search-results");
 const sectionNames = {
   home: "Home",
+  about: "About",
+  mission: "Mission",
   articoli: "Articoli",
   "guerra-ai": "Articoli",
   "onu-quotidianita": "Articoli",
