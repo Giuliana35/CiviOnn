@@ -754,7 +754,8 @@ textarea {
   line-height: 1.6;
 }
 
-.weekly-newsletter a {
+.weekly-newsletter a,
+.newsletter-link {
   width: fit-content;
   background: var(--blue);
   color: var(--white);
@@ -763,16 +764,14 @@ textarea {
   font-weight: 700;
 }
 
-.weekly-newsletter a:hover {
+.weekly-newsletter a:hover,
+.newsletter-link:hover {
   background: var(--ink);
   color: var(--gold);
 }
 
-.newsletter-panel iframe {
-  width: 100%;
-  max-width: 540px;
-  min-height: 305px;
-  border: 0;
+.newsletter-note {
+  max-width: 620px;
 }
 
 .split-page {
