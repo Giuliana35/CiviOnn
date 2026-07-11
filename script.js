@@ -14,6 +14,7 @@ const sectionNames = {
   "guerra-ai": "Articoli",
   "onu-quotidianita": "Articoli",
   "internet-appartiene": "Articoli",
+  "chat-control": "Articoli",
   "sopravvivere-permesso": "Articoli",
   "milizie-armate": "Articoli",
   "accordi-parigi": "Articoli",
