@@ -397,10 +397,17 @@ textarea {
 
 .site-footer {
   display: grid;
-  gap: 5px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: start;
   padding: 22px clamp(24px, 8vw, 145px) 26px;
   border-top: 1px solid rgba(17, 16, 26, 0.1);
   background: var(--paper);
+}
+
+.footer-block {
+  display: grid;
+  gap: 5px;
 }
 
 .site-footer span {
@@ -421,6 +428,28 @@ textarea {
 
 .site-footer a:hover {
   color: var(--blue);
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-social svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.footer-social a span {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .home-side {
