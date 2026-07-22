@@ -35,6 +35,7 @@ const sectionNames = {
   newsletter: "Newsletter",
   education: "Education",
   "climate-negotiation": "Education",
+  "constitutional-dilemmas": "Education",
 };
 const mapData = {
   italia: {
