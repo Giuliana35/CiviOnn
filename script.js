@@ -16,6 +16,7 @@ const sectionNames = {
   "internet-appartiene": "Articoli",
   "chat-control": "Articoli",
   criptovalute: "Articoli",
+  "costo-denaro": "Articoli",
   "sopravvivere-permesso": "Articoli",
   "milizie-armate": "Articoli",
   "accordi-parigi": "Articoli",
