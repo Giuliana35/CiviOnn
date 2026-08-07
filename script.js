@@ -23,6 +23,7 @@ const sectionNames = {
   "canale-suez": "Articoli",
   "rivoluzione-fenicotteri": "Articoli",
   "trump-politica-estera": "Articoli",
+  "usa-declino": "Articoli",
   weekly: "Weekly",
   culture: "Culture",
   "altra-parte-medaglia": "Culture",
