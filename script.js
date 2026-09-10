@@ -24,6 +24,7 @@ const sectionNames = {
   "rivoluzione-fenicotteri": "Articoli",
   "trump-politica-estera": "Articoli",
   "usa-declino": "Articoli",
+  "onorificenze-upa-zelensky": "Articoli",
   weekly: "Weekly",
   culture: "Culture",
   "altra-parte-medaglia": "Culture",
