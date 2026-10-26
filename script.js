@@ -28,6 +28,7 @@ const sectionNames = {
   weekly: "Weekly",
   culture: "Culture",
   "altra-parte-medaglia": "Culture",
+  arabesk: "Culture",
   team: "Team",
   dictionary: "Dictionary",
   backgrounds: "Backgrounds",
