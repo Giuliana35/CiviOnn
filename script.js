@@ -25,6 +25,7 @@ const sectionNames = {
   "trump-politica-estera": "Articoli",
   "usa-declino": "Articoli",
   "onorificenze-upa-zelensky": "Articoli",
+  "europa-torna-in-piazza": "Articoli",
   weekly: "Weekly",
   culture: "Culture",
   "altra-parte-medaglia": "Culture",
